@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700|Quattrocento:700');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap');
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: lighter;
+    font-family: 'EB Garamond', serif;
+    font-weight: 400;
     background: white;
     overflow: hidden;
 }
@@ -16,7 +18,7 @@ body {
 h1,
 h2 {
     text-align: center;
-    font-family: "Quattrocento", Georgia, 'Times New Roman', Times, serif;
+    font-family: "Cinzel", serif;
     margin: 0;
     padding: 0;
 }
@@ -24,13 +26,14 @@ h2 {
 h1 {
     font-size: 30pt;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 h2 {
     font-size: 14pt;
     font-style: italic;
-    font-family: sans-serif;
-    font-weight: lighter;
+    font-family: "Cinzel", serif;
+    font-weight: 400;
     color: #BBB;
 }
 
@@ -47,9 +50,10 @@ h2 {
     font-style: italic;
 }
 
-.written-in-ink {
+.written-in-ink,
+.written-in-ink a {
     font-size: 9pt;
-    font-family: sans-serif;
+    font-family: "Roboto Slab", serif !important;
     font-weight: 700;
     margin: 0;
 }
@@ -111,16 +115,16 @@ p {
 }
 
 a {
-    font-weight: 700;
+    font-weight: 500;
     color: #b97c2c;
-    font-family: sans-serif;
+    font-family: "EB Garamond", serif;
     text-decoration: none;
 }
 
 .unclickable {
-    font-weight: 700;
+    font-weight: 500;
     color: #4f3411;
-    font-family: sans-serif;
+    font-family: "EB Garamond", serif;
     text-decoration: none;
     cursor: not-allowed;
 }
@@ -226,6 +230,7 @@ img {
 
 #controls {
     font-size: 9pt;
+    font-family: "Roboto Slab", serif;
     display: flex;
     gap: 10px;
     user-select: none;
