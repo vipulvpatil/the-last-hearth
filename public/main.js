@@ -1,4 +1,14 @@
-(function(storyContent) {
+// Global function to start story with dynamic content
+function startStoryWithData(storyContent) {
+    initializeStory(storyContent);
+}
+
+function initializeStory(storyContent) {
+    // Clear any existing story content
+    var storyContainer = document.querySelector('#story');
+    if (storyContainer) {
+        storyContainer.innerHTML = '<div class="header"><h1>Story</h1><h2 class="byline"></h2></div>';
+    }
 
     // Create ink story from the content using inkjs
     var story = new inkjs.Story(storyContent);
@@ -392,10 +402,10 @@
 
         let rewindEl = document.getElementById("rewind");
         if (rewindEl) rewindEl.addEventListener("click", function(event) {
-            removeAll("p");
-            removeAll("img");
-            setVisible(".header", false);
-            restart();
+            // Go back to chapter selection
+            if (window.chapterLoader) {
+                window.chapterLoader.showChapterSelection();
+            }
         });
 
         let saveEl = document.getElementById("save");
@@ -436,4 +446,4 @@
         });
     }
 
-})(storyContent);
+}

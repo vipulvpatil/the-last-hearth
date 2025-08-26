@@ -10,8 +10,7 @@ Laughter from a table is drowned by an argument on another. A roar of Huzzah acc
 * Julian.
 
 - I read the letter in my trembling hand again.
-"Nothing like sitting by the fire after a trek to the Untamed Lands. Only thing warmer is your onion soup. You got to make that when I am back".
-I trudge past the dead embers in the fireplace. The leg hurts and I stumble.
+"Nothing like sitting by the fire after a trek to the Untamed Lands. Only thing warmer is your onion soup. You got to make that when I am back". I trudge past the dead embers in the fireplace. The leg hurts and I stumble.
 
 * [Hold on to something] I hold the bar counter. -> get_up
 * [Stumble on] Thud. The world fades in and out. -> falling
@@ -28,18 +27,16 @@ I try the Golden Liquid. Another swig. Another page. -> drink
 + [{!Drink | One more | Chug}] -> drink
 * [Read]
 
-- "They have found a new kind of mud. It should help with the leaky roof. I will bring some."
-The letter slips from my hand, settles on the counter. I expect to see it littered with tears. Instead the tears are on my cheek.
+- "They have found a new kind of mud. It should help with the leaky roof. I will bring some." The letter slips from my hand, settles on the counter. I expect to see it littered with tears. Instead the tears are on my cheek.
 
 Frozen.
 
 * [Continue drinking]
 
-- The empty bottle rolls off the bar. More darkness. I get a second bottle and read again.
-“Dear Mama,…”
+- The empty bottle rolls off the bar. The darkness has thickened. I get a second bottle and read again.
+"Dear Mama,…"
 
-- A howling wind interrupts me. 
-
+- A howling wind interrupts me.
 * [Look up] -> look_up
 * [Ignore] -> ignore
 ===look_up===
@@ -48,17 +45,13 @@ A silhouette stands in the open door.
 ===ignore===
 Unimportant
 -> door_close
-==door_close===
-- The door pounds to a close.
-
-{look_up:The stranger slowly drifts towards me while unravelling the garb hiding their face.|Footsteps.}
-
- A wrinkled face fenced by a gray mane reveals the scars of many fights. One in particular has left a deep gash across the left eye.
-“I had heard The Last Hearth had been abandoned”. His accent is unfamiliar, maybe Eastern. 
+===door_close===
+- The door pounds to a close. {look_up:The stranger slowly drifts towards me while unravelling the garb hiding their face.|Footsteps.} A wrinkled face fenced by a gray mane reveals the scars of many fights. One in particular has left a deep gash across the left eye. "I had heard The Last Hearth had been abandoned". His accent is unfamiliar, maybe Eastern. 
 * [Reveal nothing] I remain silent. He continues. 
 - "Guess I heard wrong. I also heard there was still some Golden Liquid available. I see that bit is true".
 * [Pour drink] I pour him a drink with a steady hand. 
-- I go back to my drink until the thud of the door. A pair of coins glint on the counter. 
+- I lose into my drink. A thud brings me back. The stranger's gone. A pair of coins glint on the counter. 
+
 Cold, unmoving, empty.
 
 -> END
