@@ -11,9 +11,12 @@ An interactive fiction about loss, survival and indifference.
 To compile the ink stories to JSON format:
 
 ```bash
-make          # Build all stories
+make build    # Build all stories (default)
+make play     # Play story in terminal with chapter selection
+make serve    # Build and serve the web version locally
 make clean    # Remove compiled files
 make rebuild  # Clean and rebuild all stories
+make help     # Show all available commands
 ```
 
 Stories are compiled from `story/*.ink` to `public/chapters/*.json`.
