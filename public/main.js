@@ -1,13 +1,14 @@
 // Global function to start story with dynamic content
-function startStoryWithData(storyContent) {
-    initializeStory(storyContent);
+function startStoryWithData(storyContent, chapterName) {
+    initializeStory(storyContent, chapterName);
 }
 
-function initializeStory(storyContent) {
+function initializeStory(storyContent, chapterName) {
     // Clear any existing story content
     var storyContainer = document.querySelector('#story');
     if (storyContainer) {
-        storyContainer.innerHTML = '<div class="header"><h1>Story</h1><h2 class="byline"></h2></div>';
+        const title = chapterName || 'Chapter';
+        storyContainer.innerHTML = `<div class="header"><h1 id="chapter-title">${title}</h1><h2 class="byline"></h2></div>`;
     }
 
     // Create ink story from the content using inkjs
@@ -402,10 +403,10 @@ function initializeStory(storyContent) {
 
         let rewindEl = document.getElementById("rewind");
         if (rewindEl) rewindEl.addEventListener("click", function(event) {
-            // Go back to chapter selection
-            if (window.chapterLoader) {
-                window.chapterLoader.showChapterSelection();
-            }
+            removeAll("p");
+            removeAll("img");
+            setVisible(".header", false);
+            restart();
         });
 
         let saveEl = document.getElementById("save");

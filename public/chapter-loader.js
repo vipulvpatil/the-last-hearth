@@ -56,7 +56,7 @@ class ChapterLoader {
             button.href = '#';
             button.onclick = (e) => {
                 e.preventDefault();
-                this.loadChapter(chapter.file);
+                this.loadChapter(chapter.file, chapter.name);
             };
             this.chapterListElement.appendChild(button);
         });
@@ -66,7 +66,7 @@ class ChapterLoader {
         this.chapterListElement.innerHTML = '<p>No chapters available. Please build the stories first using <code>make</code>.</p>';
     }
 
-    async loadChapter(chapterFile) {
+    async loadChapter(chapterFile, chapterName) {
         try {
             const response = await fetch(`chapters/${chapterFile}`);
             if (!response.ok) {
@@ -74,7 +74,7 @@ class ChapterLoader {
             }
             
             const storyData = await response.json();
-            this.startStory(storyData);
+            this.startStory(storyData, chapterName);
             
         } catch (error) {
             console.error('Failed to load chapter:', error);
@@ -82,14 +82,20 @@ class ChapterLoader {
         }
     }
 
-    startStory(storyData) {
+    startStory(storyData, chapterName) {
         // Hide chapter selection and show story
         this.chapterSelectionElement.style.display = 'none';
         this.storyElement.style.display = 'block';
         
-        // Initialize the story with the loaded data
+        // Enable the controls when playing a chapter
+        const controls = document.getElementById('controls');
+        if (controls) {
+            controls.classList.remove('disabled');
+        }
+        
+        // Initialize the story with the loaded data and chapter name
         if (window.startStoryWithData) {
-            window.startStoryWithData(storyData);
+            window.startStoryWithData(storyData, chapterName);
         } else {
             console.error('Story initialization function not found');
         }
@@ -99,6 +105,12 @@ class ChapterLoader {
         // Show chapter selection and hide story
         this.chapterSelectionElement.style.display = 'block';
         this.storyElement.style.display = 'none';
+        
+        // Disable the controls when at chapter selection
+        const controls = document.getElementById('controls');
+        if (controls) {
+            controls.classList.add('disabled');
+        }
     }
 }
 
