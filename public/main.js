@@ -16,7 +16,6 @@ function initializeStory(storyContent, chapterName) {
 
     var savePoint = "";
 
-    let savedTheme;
     let globalTagTheme;
 
     // Global tags - those at the top of the ink file
@@ -378,23 +377,13 @@ function initializeStory(storyContent, chapterName) {
         return false;
     }
 
-    // Detects which theme (light or dark) to use
+    // Sets theme based on global tag, defaults to dark
     function setupTheme(globalTagTheme) {
-
-        // load theme from browser memory
-        var savedTheme;
-        try {
-            savedTheme = window.localStorage.getItem('theme');
-        } catch (e) {
-            console.debug("Couldn't load saved theme");
-        }
-
         // Check whether the OS/browser is configured for dark mode
         var browserDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        if (savedTheme === "dark"
-            || (savedTheme == undefined && globalTagTheme === "dark")
-            || (savedTheme == undefined && globalTagTheme == undefined && browserDark))
+        if (globalTagTheme === "dark"
+            || (globalTagTheme == undefined && browserDark))
             document.body.classList.add("dark");
     }
 
@@ -414,7 +403,6 @@ function initializeStory(storyContent, chapterName) {
             try {
                 window.localStorage.setItem('save-state', savePoint);
                 document.getElementById("reload").removeAttribute("disabled");
-                window.localStorage.setItem('theme', document.body.classList.contains("dark") ? "dark" : "");
             } catch (e) {
                 console.warn("Couldn't save state");
             }
@@ -440,11 +428,6 @@ function initializeStory(storyContent, chapterName) {
             continueStory(true);
         });
 
-        let themeSwitchEl = document.getElementById("theme-switch");
-        if (themeSwitchEl) themeSwitchEl.addEventListener("click", function(event) {
-            document.body.classList.add("switched");
-            document.body.classList.toggle("dark");
-        });
     }
 
 }
