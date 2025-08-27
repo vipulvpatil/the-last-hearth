@@ -7,8 +7,20 @@ function initializeStory(storyContent, chapterName) {
     // Clear any existing story content
     var storyContainer = document.querySelector('#story');
     if (storyContainer) {
-        const title = chapterName || 'Chapter';
-        storyContainer.innerHTML = `<div class="header"><h1 id="chapter-title">${title}</h1><h2 class="byline"></h2></div>`;
+        const fullTitle = chapterName || 'Chapter';
+        // Split title at colon - first part becomes title, second becomes subtitle
+        let title, subtitle;
+        if (fullTitle.includes(':')) {
+            const parts = fullTitle.split(':');
+            title = parts[0].trim();
+            subtitle = parts[1].trim();
+        } else {
+            title = fullTitle;
+            subtitle = '';
+        }
+        
+        const subtitleHtml = subtitle ? `<h2 class="subtitle">${subtitle}</h2>` : '';
+        storyContainer.innerHTML = `<div class="header"><h1 id="chapter-title">${title}</h1>${subtitleHtml}<h2 class="byline"></h2></div>`;
     }
 
     // Create ink story from the content using inkjs

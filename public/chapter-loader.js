@@ -52,7 +52,10 @@ class ChapterLoader {
 
         chapters.forEach(chapter => {
             const button = document.createElement('a');
-            button.textContent = chapter.name;
+            // Extract only the part before the colon for display
+            const displayName = chapter.name.includes(':') ? 
+                chapter.name.split(':')[0].trim() : chapter.name;
+            button.textContent = displayName;
             button.href = '#';
             button.onclick = (e) => {
                 e.preventDefault();
