@@ -241,6 +241,19 @@ img {
     color: #444;
 }
 
+/* Chapter selection styling */
+#chapter-list {
+    text-align: center;
+}
+
+#chapter-list a {
+    display: block;
+    font-size: 18pt;
+    font-weight: 600;
+    margin: 15px 0;
+    padding: 10px;
+}
+
 /* Remove pipe separators for flexbox footer */
 /* #controls>*:not(:last-child):after {
     content: " | ";
