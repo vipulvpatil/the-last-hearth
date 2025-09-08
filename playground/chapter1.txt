@@ -1,3 +1,5 @@
+// This has gotten a little mechanical and all the weight built in the prelude seems lost. I need to write the entire scene before building the branching.
+
 The Golden Ale keg is empty. I slowly make my way to store room, pausing to glance at the salted frozen meat.
 
 * [I should eat] -> cook
@@ -30,16 +32,15 @@ A man not much older than Julian makes his presence known with a polite cough. S
 * [Feed the man] I bring him Golden Liquid with a bowl full of stew.
 * (ask) [Ask about him] "What brings you this far South"? I would be happy to answer your questions once I have eaten something.
 
-- The man quickly gulps the stew and walks over to me with his Ale. {ask:"So you wanted to know what I am doing here?"|"I am sure you are wondering why I am here"}
-"Name's Rivalgo. From West Keep. On my way to Plankus." He takes the final gulp and leaves the mug on the counter. "You haven't seen a young girl pass by?"
-* [Lie] "I might have, people pass through". He looks around the unkempt tavern. He sighs. "Look! I am not trying to hurt her, just trying to bring her home. She is my sister. Now I ask again, have you seen her?"
+- The man quickly gulps the stew and walks over to me with his Ale. {ask:"So you wanted to know what I am doing here?"}
+"Name's Rivalgo. From Westbend. On my way to Greyfort." He takes the final gulp and leaves the mug on the counter. "You haven't seen a young girl pass by?"
+* [Lie] "I might have, people pass through." He looks around the unkempt tavern. He sighs. "Look! I am not trying to hurt her, just trying to bring her home. She is my sister. Now I ask again, have you seen her?"
 * [Truth]
 
-- "No! But I haven't been here long". His face falls.
-* [Pour him another mug] He takes a sip. "I wish she would just return. With Ma and Pa gone, it is hard enough without her running off like this."
+- "No! But I haven't been here long". Dejected he holds his mug.
+* [Pour him another mug] He takes a sip. "With Ma and Pa gone, it is hard enough. And now she runs off." -> investigate
 * [Let him be] You leave him alone with his thoughts.
-He slowly pull his rucksack onto his back and leaves. 
-
+He slowly pull his rucksack onto his back and leaves.
 -> END
 
 ===Atreis===
