@@ -6,7 +6,7 @@ I instinctively wriggle my fingers. The bear took a piece of my arm but most of 
 * [Pull back hood]
 - As I take the hood down and wipe off the flakes of snow from my face, a fully lit tavern appears. Laughter from a table is drowned by an argument on another. A roar of Huzzah accompanies raised goblets around the fireplace. Is that him? I take a small step towards him. He begins to flicker away. I reach out and grasp nothing. Silence calls his name. 
 
-* Julian.
+* Julius.
 - I read the letter in my trembling hand again. "Nothing like sitting by the fire after a trek to the Untamed Lands. Only thing warmer is your onion soup. You got to make that when I am back". I trudge past the dead embers in the fireplace. The leg hurts and I stumble.
 
 * [Hold on to something] I hold the bar counter. -> get_up
